@@ -7,7 +7,7 @@ import FoodList from '../Pages/FoodPage';
 const Routing = () => {
     return (
         <div>
-        {/* <ResponsiveAppBar/> */}
+        <ResponsiveAppBar/>
             <Routes>
                 <Route path='/' element={<FoodForm />} />
                 <Route path='/page' element={<FoodList />} />

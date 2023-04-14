@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
+import { Box } from '@mui/material';
 
 const FoodForm = () => {
     const [foodName, setFoodName] = useState('');
@@ -36,49 +37,51 @@ const FoodForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <TextField
-                id="food-name"
-                label="Food Name"
-                variant="outlined"
-                value={foodName}
-                onChange={handleFoodNameChange}
-                margin="normal"
-                required
-                fullWidth
-            />
-            <TextField
-                id="food-type"
-                select
-                label="Food Type"
-                variant="outlined"
-                value={foodType}
-                onChange={handleFoodTypeChange}
-                margin="normal"
-                required
-                fullWidth
-            >
-                <MenuItem value="Delicious Food">Delicious Food</MenuItem>
-                <MenuItem value="Nutritious Food">Nutritious Food</MenuItem>
-                <MenuItem value="Fast Food">Fast Food</MenuItem>
-                <MenuItem value="Beverages">Beverages</MenuItem>
-                <MenuItem value="Desserts">Desserts</MenuItem>
-            </TextField>
-            <TextField
-                id="max-delivery-time"
-                label="Max Delivery Time (in minutes)"
-                type="number"
-                variant="outlined"
-                value={maxDeliveryTime}
-                onChange={handleMaxDeliveryTimeChange}
-                margin="normal"
-                required
-                fullWidth
-            />
-            <Button type="submit" variant="contained" color="primary" fullWidth>
-                Submit
-            </Button>
-        </form>
+        <Box style={{ margin : 'auto',justifyContent:'center' , border:'2px solid red'}}>
+            <form onSubmit={handleSubmit} style={{ width: '50%', marginTop: '70px' }}>
+                <TextField
+                    id="food-name"
+                    label="Food Name"
+                    variant="outlined"
+                    value={foodName}
+                    onChange={handleFoodNameChange}
+                    margin="normal"
+                    required
+                    fullWidth
+                />
+                <TextField
+                    id="food-type"
+                    select
+                    label="Food Type"
+                    variant="outlined"
+                    value={foodType}
+                    onChange={handleFoodTypeChange}
+                    margin="normal"
+                    required
+                    fullWidth
+                >
+                    <MenuItem value="Delicious Food">Delicious Food</MenuItem>
+                    <MenuItem value="Nutritious Food">Nutritious Food</MenuItem>
+                    <MenuItem value="Fast Food">Fast Food</MenuItem>
+                    <MenuItem value="Beverages">Beverages</MenuItem>
+                    <MenuItem value="Desserts">Desserts</MenuItem>
+                </TextField>
+                <TextField
+                    id="max-delivery-time"
+                    label="Max Delivery Time (in minutes)"
+                    type="number"
+                    variant="outlined"
+                    value={maxDeliveryTime}
+                    onChange={handleMaxDeliveryTimeChange}
+                    margin="normal"
+                    required
+                    fullWidth
+                />
+                <Button type="submit" variant="contained" color="primary" fullWidth>
+                    Submit
+                </Button>
+            </form>
+        </Box>
     );
 };
 
